@@ -1,0 +1,227 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        
+        .view-section {
+            display: none; /* Hide all views by default */
+            padding-bottom: 50px;
+        }
+        
+        .view-section.active {
+            display: block; /* Show active view */
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Navbar Styling */
+        .navbar-brand {
+            font-weight: 700;
+            color: #0d6efd !important;
+            letter-spacing: 0.5px;
+        }
+
+        /* Card styling */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .exam-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        /* Question Palette Styling */
+        .palette-btn {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .palette-not-visited { background-color: #e9ecef; color: #495057; }
+        .palette-answered { background-color: #0d6efd; color: white; }
+        .palette-marked { background-color: #ffc107; color: #212529; }
+        
+        .palette-current { 
+            border: 2px solid #000;
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        /* Options Styling */
+        .option-container {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .option-container:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .option-container.selected {
+            border-color: #0d6efd;
+            background-color: #e7f1ff;
+        }
+
+        /* Utility */
+        .cursor-pointer { cursor: pointer; }
+        .text-primary-custom { color: #0d6efd; }
+
+        .pulse {
+            animation: timerPulse 1s infinite;
+        }
+
+        @keyframes timerPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.65; }
+        }
+
+        /* ================================
+   Premium Footer
+================================ */
+
+footer {
+    position: relative;
+    background: linear-gradient(135deg, #0f172a, #1e293b) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+    overflow: hidden;
+}
+
+/* Top glowing line */
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff7a18, #ffb347);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 15px rgba(255, 122, 24, 0.6);
+}
+
+/* Footer container */
+footer .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Copyright text */
+footer p {
+    letter-spacing: 0.3px;
+    transition: 0.3s ease;
+}
+
+/* Muted text */
+footer .text-muted {
+    color: #94a3b8 !important;
+}
+
+/* Sonu Kumar name */
+footer strong {
+    color: #f8fafc;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+/* Hover effect on name */
+footer p:hover strong {
+    color: #ff9f43;
+    text-shadow: 0 0 10px rgba(255, 159, 67, 0.35);
+}
+
+/* Code icon */
+footer .bi-code-slash {
+    color: #ff9f43;
+    font-size: 15px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Heart */
+footer p:last-child {
+    color: #94a3b8 !important;
+}
+
+footer p:last-child::first-letter {
+    color: #ff4d6d;
+}
+
+/* Subtle background glow */
+footer::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: 50%;
+    bottom: -140px;
+    transform: translateX(-50%);
+    background: rgba(255, 122, 24, 0.12);
+    filter: blur(50px);
+    border-radius: 50%;
+}
+
+/* Mobile responsive */
+@media (max-width: 576px) {
+    footer {
+        padding: 25px 15px !important;
+    }
+
+    footer p {
+        font-size: 12px !important;
+        line-height: 1.8;
+    }
+
+    footer::before {
+        width: 90px;
+    }
+}
+
+#optionsContainer .form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 60px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6 !important;
+    padding: 16px !important;
+    cursor: pointer;
+}
+
+#optionsContainer .form-check-input {
+    flex-shrink: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+#optionsContainer .form-check-label {
+    display: inline-block;
+    flex: 1;
+    color: #212529 !important;
+    font-size: 16px;
+    opacity: 1 !important;
+    visibility: visible !important;
+    cursor: pointer;
+}
+
+#optionsContainer .form-check:hover {
+    background-color: #f0f6ff;
+    border-color: #0d6efd !important;
+}
